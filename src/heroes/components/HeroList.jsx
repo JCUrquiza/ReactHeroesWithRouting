@@ -1,9 +1,12 @@
+import { useMemo } from 'react';
 import { HeroCard } from './';
 import { getHeroesByPublisher } from '../helpers';
 
 export const HeroList = ({ publisher }) => {
 
-    const heroes = getHeroesByPublisher(publisher);
+    // Hook de useMemo, cuando el 'publisher' cambié, se dispara el método
+    // del primer parámetro.
+    const heroes = useMemo( () => getHeroesByPublisher(publisher), [publisher]);
     console.log(heroes);
 
     return (

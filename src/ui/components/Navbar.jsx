@@ -6,10 +6,11 @@ export const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     console.log(user);
 
     const onLogout = () => {
+        logout();
         // replace evita regresar al historial anterior:
         navigate('/login', {
             replace: true
@@ -64,7 +65,7 @@ export const Navbar = () => {
                 <ul className="navbar-nav ml-auto">
 
                     <span className='nav-item nav-link text-primary'>
-                        { user.name }
+                        { user?.name }
                     </span>
                     <button 
                         className='nav-item nav-link btn'

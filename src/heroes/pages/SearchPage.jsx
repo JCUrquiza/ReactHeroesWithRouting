@@ -72,7 +72,7 @@ export const SearchPage = () => {
                         style={{ display: showSearch ? '' : 'none' }}>
                         Search a hero
                     </div>
-                    <div className="alert alert-danger animate__animated animate__fadeIn" 
+                    <div aria-label="alert-danger" className="alert alert-danger animate__animated animate__fadeIn" 
                         style={{ display: showError ? '' : 'none' }}>
                         No hero with <b>{ q }</b>
                     </div>
